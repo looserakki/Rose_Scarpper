@@ -51,23 +51,23 @@ if STRING_1:
 if STRING_2:
  bbot = TelegramClient(StringSession(STRING_2), KEY_2, HASH_2)
 if STRING_3:
- cbot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
+ cbot = TelegramClient(StringSession(STRING_3), KEY_3, HASH_3)
 if STRING_4:
- dbot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
-if STRING_4:
- ebot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
+ dbot = TelegramClient(StringSession(STRING_4), KEY_4, HASH_4)
 if STRING_5:
- fbot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
+ ebot = TelegramClient(StringSession(STRING_5), KEY_5, HASH_5)
 if STRING_6:
- gbot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
+ fbot = TelegramClient(StringSession(STRING_6), KEY_6, HASH_6)
 if STRING_7:
- hbot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
+ gbot = TelegramClient(StringSession(STRING_7), KEY_7, HASH_7)
 if STRING_8:
- ibot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
+ hbot = TelegramClient(StringSession(STRING_8), KEY_8, HASH_8)
 if STRING_9:
- jbot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
+ ibot = TelegramClient(StringSession(STRING_9), KEY_9, HASH_9)
 if STRING_10:
- kbot = TelegramClient(StringSession(STRING_1), KEY_1, HASH_2)
+ jbot = TelegramClient(StringSession(STRING_10), KEY_10, HASH_10)
+
+tbot = TelegramClient(None, KEY_1, HASH_1)
 
 try:
         abot.start()
