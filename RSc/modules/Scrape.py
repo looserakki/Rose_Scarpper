@@ -27,7 +27,7 @@ async def sc(event):
      if user.username:
        members.append(user.username)
 
-@tbot.on(events.NewMessage(pattern="^/members$")
+@tbot.on(events.NewMessage(pattern="^/members$"))
 async def mem(event):
  if len(members) == 0:
    return await event.reply("Scrape some members first")
