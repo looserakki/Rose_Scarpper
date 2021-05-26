@@ -31,10 +31,6 @@ ybot = TelegramClient(StringSession(S_5), K_5, H_5)
 
 try:
   ubot.start()
-  vbot.start()
-  wbot.start()
-  xbot.start()
-  ybot.start()
 except Exception as e:
   print(e)
   sys.exit()
