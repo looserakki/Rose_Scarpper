@@ -24,10 +24,6 @@ TOKEN = os.environ.get("TOKEN")
 tbot = TelegramClient(None, K_1, H_1)
 
 ubot = TelegramClient(StringSession(S_1), K_1, H_1)
-vbot = TelegramClient(StringSession(S_2), K_2, H_2)
-wbot = TelegramClient(StringSession(S_3), K_3, H_3)
-xbot = TelegramClient(StringSession(S_4), K_4, H_4)
-ybot = TelegramClient(StringSession(S_5), K_5, H_5)
 
 try:
   ubot.start()
