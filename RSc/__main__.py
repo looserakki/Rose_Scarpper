@@ -1,5 +1,5 @@
-from Rsc import TOKEN, tbot
-import Rsc.events
+from RSc import TOKEN, tbot
+import RSc.events
 
 try:
     tbot.start(bot_token=TOKEN)
