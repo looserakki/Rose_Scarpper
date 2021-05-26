@@ -19,6 +19,7 @@ H_2 = os.environ.get("HASH_2")
 H_3 = os.environ.get("HASH_3")
 H_4 = os.environ.get("HASH_4")
 H_5 = os.environ.get("HASH_5")
+OWNER_ID = os.environ.get("OWNER_ID")
 
 TOKEN = os.environ.get("TOKEN")
 tbot = TelegramClient(None, K_1, H_1)
