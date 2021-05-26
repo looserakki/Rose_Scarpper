@@ -20,6 +20,9 @@ H_3 = os.environ.get("HASH_3")
 H_4 = os.environ.get("HASH_4")
 H_5 = os.environ.get("HASH_5")
 
+TOKEN = os.environ.get("TOKEN")
+tbot = TelegramClient(None, K_1, H_1)
+
 ubot = TelegramClient(StringSession(S_1), K_1, H_1)
 vbot = TelegramClient(StringSession(S_2), K_2, H_2)
 wbot = TelegramClient(StringSession(S_3), K_3, H_3)
