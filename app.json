@@ -59,37 +59,37 @@
          "description": "Required for Update module",
          "required": false,
          "value": ""
-      }
+      },
       "HASH_5": {
          "description": "Required for Update module",
          "required": false,
          "value": ""
-      }
+      },
       "KEY_5": {
          "description": "Required for Update module",
          "required": false,
          "value": ""
-      }
+      },
       "STRING_4": {
          "description": "Required for Update module",
          "required": false,
          "value": ""
-      }
+      },
       "STRING_5": {
          "description": "Required for Update module",
          "required": false,
          "value": ""
-      }
+      },
       "STRING_1": {
          "description": "Required for Update module",
          "required": true,
          "value": ""
-      }
+      },
       "HASH_3": {
          "description": "Required for Update module",
          "required": false,
          "value": ""
-      }
+      },
       "HASH_2": {
          "description": "Required for Update module",
          "required": false,
