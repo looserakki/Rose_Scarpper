@@ -1,6 +1,6 @@
 from RSc import ubot, vbot, wbot, xbot, ybot, OWNER_ID, tbot
 from telethon import events
-import io
+import io, sys, os, traceback
 from telethon.tl.functions.messages import ImportChatInviteRequest
 
 @tbot.on(events.NewMessage(pattern="^/start$"))
