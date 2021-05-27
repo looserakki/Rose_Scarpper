@@ -23,6 +23,7 @@ async def add(event):
    client = random.choice(clients)
    try:
      await client(invite(event.chat_id, user))
+     print(user)
      final += 1
      await asyncio.sleep(1)
      members.remove(user)
