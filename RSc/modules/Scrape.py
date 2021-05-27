@@ -27,7 +27,7 @@ async def sc(event):
  client = [ubot, vbot, wbot, xbot, ybot]
  for x in client:
   try:
-    await client(JoinChannelRequest(event.chat.username))
+    await x(JoinChannelRequest(event.chat.username))
   except:
     pass
  try:
