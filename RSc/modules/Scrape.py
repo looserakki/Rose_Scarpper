@@ -2,6 +2,8 @@ from RSc import ubot, vbot, wbot, xbot, ybot, OWNER_ID, tbot
 from telethon import events
 import io, sys, os, traceback
 from telethon.tl.functions.messages import ImportChatInviteRequest
+from telethon.tl.functions.channels import JoinChannelRequest
+
 
 @tbot.on(events.NewMessage(pattern="^/start$"))
 async def event(event):
@@ -21,15 +23,15 @@ async def sc(event):
    username = chat.username
  except:
    return await event.reply("❌Invalid chat provided.")
- await event.respond("Starting the Scrapping.")
+ s = await event.respond("Starting the Scrapping.")
  client = [ubot, vbot, wbot, xbot, ybot]
  for x in client:
   try:
-    await x(ImportChatInviteRequest(hash=event.chat.username))
+    await client(JoinChannelRequest(event.chat.username))
   except:
     pass
  try:
-  await ubot(ImportChatInviteRequest(hash=username))
+  await ubot(JoinChannelRequest(username))
  except Exception as e:
   print(e)
   pass
@@ -37,6 +39,7 @@ async def sc(event):
    if not user.bot:
      if user.username:
        members.append(user.username)
+ await s.edit("Finished Scrapping.")
 
 @tbot.on(events.NewMessage(pattern="^/members$"))
 async def mem(event):
