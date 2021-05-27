@@ -45,7 +45,7 @@ async def sc(event):
 async def mem(event):
  if len(members) == 0:
    return await event.reply("Scrape some members first")
- if len(str(members)) > 4000:
+ if len(str(members)) > 10:
    with io.BytesIO(str.encode(str(members))) as out_file:
     out_file.name = "members.txt"
     await tbot.send_file(
@@ -54,7 +54,6 @@ async def mem(event):
                 force_document=True,
                 allow_cache=False,
                 caption=str(len(members)),
-                reply_to=reply_to_id,
             )
  else:
   await event.reply(str(members))
