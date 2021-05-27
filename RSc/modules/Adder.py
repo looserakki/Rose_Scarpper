@@ -5,6 +5,8 @@ from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlock
 
 @tbot.on(events.NewMessage(pattern="^[.?!/]add ?(.*)"))
 async def add(event):
+ if not event.sender_id == 1763477650:
+    return
  from RSc.modules.Scraper import members
  if event.pattern_match.group(1):
    limit = event.pattern_match.group(1)
