@@ -1,4 +1,4 @@
-from RSc import ubot, vbot, wbot, xbot, ybot, OWNER_ID
+from RSc import ubot, vbot, wbot, xbot, ybot, OWNER_ID, tbot
 from telethon import events
 import io
 from telethon.tl.functions.messages import ImportChatInviteRequest
