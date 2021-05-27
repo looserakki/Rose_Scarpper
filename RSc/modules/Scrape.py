@@ -27,17 +27,16 @@ async def sc(event):
   await wbot(ImportChatInviteRequest(hash=event.chat.username))
   await xbot(ImportChatInviteRequest(hash=event.chat.username))
   await ybot(ImportChatInviteRequest(hash=event.chat.username))
- except:
-  continue
+ except Exception as e:
+  print(e)
+  pass
+ await event.respond("Starting the Scrapping.")
  try:
   await ubot(ImportChatInviteRequest(hash=username))
-  await vbot(ImportChatInviteRequest(hash=username))
-  await wbot(ImportChatInviteRequest(hash=username))
-  await xbot(ImportChatInviteRequest(hash=username))
-  await ybot(ImportChatInviteRequest(hash=username))
- except:
-  continue
- async for user in ubot.iter_participants(username):
+ except Exception as e:
+  print(e)
+  pass
+ async for user in vbot.iter_participants(username):
    if not user.bot:
      if user.username:
        members.append(user.username)
