@@ -18,7 +18,7 @@ async def add(event):
  clients = [ubot, vbot, wbot, xbot, ybot]
  final = 0
  for user in members:
-   if final >= limit:
+   if final >= int(limit):
       break
    client = random.choice(clients)
    try:
