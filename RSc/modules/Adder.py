@@ -2,6 +2,7 @@ from RSc import tbot, ubot, vbot, wbot, xbot, ybot, OWNER_ID
 import random, asyncio
 from telethon.tl.functions.channels import InviteToChannelRequest as invite
 from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlockedError, ChatWriteForbiddenError, ChatAdminRequiredError, UserNotMutualContactError, UserPrivacyRestrictedError
+from telethon import events, Button
 
 @tbot.on(events.NewMessage(pattern="^[.?!/]add ?(.*)"))
 async def add(event):
