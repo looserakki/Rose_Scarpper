@@ -1,11 +1,11 @@
-from RSc import ubot, OWNER_ID
+from RSc import ubot, vbot, wbot, xbot, ybot, OWNER_ID
 from telethon import events
 import io
 from telethon.tl.functions.messages import ImportChatInviteRequest
 
 @tbot.on(events.NewMessage(pattern="^/start$"))
 async def event(event):
- await event.reply("RSc Scrapper is online With 1/15 Clients Active.")
+ await event.reply("RSc Scrapper is online With 5/15 Clients Active.")
 
 members = []
 
@@ -21,7 +21,22 @@ async def sc(event):
    username = chat.username
  except:
    return await event.reply("❌Invalid chat provided.")
- await ubot(ImportChatInviteRequest(hash=username))
+ try:
+  await ubot(ImportChatInviteRequest(hash=event.chat.username))
+  await vbot(ImportChatInviteRequest(hash=event.chat.username))
+  await wbot(ImportChatInviteRequest(hash=event.chat.username))
+  await xbot(ImportChatInviteRequest(hash=event.chat.username))
+  await ybot(ImportChatInviteRequest(hash=event.chat.username))
+ except:
+  continue
+ try:
+  await ubot(ImportChatInviteRequest(hash=username))
+  await vbot(ImportChatInviteRequest(hash=username))
+  await wbot(ImportChatInviteRequest(hash=username))
+  await xbot(ImportChatInviteRequest(hash=username))
+  await ybot(ImportChatInviteRequest(hash=username))
+ except:
+  continue
  async for user in ubot.iter_participants(username):
    if not user.bot:
      if user.username:
