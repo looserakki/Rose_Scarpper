@@ -2,7 +2,7 @@ from RSc import ubot, vbot, wbot, xbot, ybot, OWNER_ID, tbot
 from telethon import events
 import io, sys, os, traceback
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from telethon.tl.functions.channels import JoinChannelRequest
+from telethon.tl.functions.channels import JoinChannelRequest, LeaveChannelRequest
 
 
 @tbot.on(events.NewMessage(pattern="^/start$"))
@@ -31,15 +31,16 @@ async def sc(event):
   except:
     pass
  try:
-  await ubot(JoinChannelRequest(username))
+  await vbot(JoinChannelRequest(username))
  except Exception as e:
   print(e)
   pass
- async for user in ubot.iter_participants(username):
+ async for user in vbot.iter_participants(username):
    if not user.bot:
      if user.username:
        members.append(user.username)
  await s.edit("Finished Scrapping.")
+ await vbot(LeaveChannelRequest(username))
 
 @tbot.on(events.NewMessage(pattern="^/members$"))
 async def mem(event):
