@@ -16,7 +16,7 @@ async def add(event):
  if len(members) == 0 or len(members) < int(limit):
    return await event.reply("Not enough members in scrapped list.")
  clients = [ubot, vbot, wbot, xbot, ybot]
- final_no
+ final = 0
  for user in members:
    if final >= limit:
       break
