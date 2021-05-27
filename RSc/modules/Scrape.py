@@ -1,7 +1,7 @@
 from RSc import ubot, OWNER_ID
 from telethon import events
 import io
-from telethon.functions.messages import ImportChatInviteRequest
+from telethon.tl.functions.messages import ImportChatInviteRequest
 
 @tbot.on(events.NewMessage(pattern="^/start$"))
 async def event(event):
