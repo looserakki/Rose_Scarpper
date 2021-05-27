@@ -10,6 +10,8 @@ async def add(event):
    limit = event.pattern_match.group(1)
  else:
    limit = 50
+ if len(members) == 0 or len(members) < limit:
+   return await event.reply("Not enough members in scrapped list.")
  clients = [ubot, vbot, wbot, xbot, ybot]
  final_no
  for user in members:
