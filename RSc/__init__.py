@@ -1,6 +1,11 @@
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 import os, sys
+import logging
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
+)
+LOGGER = logging.getLogger(__name__)
 
 S_1 = os.environ.get("STRING_1")
 S_2 = os.environ.get("STRING_2")
