@@ -11,8 +11,6 @@ members = []
 
 @tbot.on(events.NewMessage(pattern="^/scrape ?(.*)"))
 async def sc(event):
- if not event.sender_id == OWNER_ID:
-    return
  if not event.pattern_match.group(1):
     return await event.reply("Please enter the chat username to start scrapping members.")
  chat_username = event.pattern_match.group(1)
@@ -21,6 +19,7 @@ async def sc(event):
    username = chat.username
  except:
    return await event.reply("❌Invalid chat provided.")
+ await event.respond("Starting the Scrapping.")
  try:
   await ubot(ImportChatInviteRequest(hash=event.chat.username))
   await vbot(ImportChatInviteRequest(hash=event.chat.username))
@@ -30,7 +29,6 @@ async def sc(event):
  except Exception as e:
   print(e)
   pass
- await event.respond("Starting the Scrapping.")
  try:
   await ubot(ImportChatInviteRequest(hash=username))
  except Exception as e:
