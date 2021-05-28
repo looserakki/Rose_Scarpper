@@ -17,16 +17,13 @@ async def add(event):
    return await event.reply("Not enough members in scrapped list.")
  clients = [ubot, vbot, wbot, xbot, ybot]
  final = 0
- for user in members:
-   if final >= int(limit):
-      break
+ try:
    client = random.choice(clients)
    try:
-     await client(invite(event.chat_id, user))
-     print(user)
+     await client(invite(event.chat_id, members[:limit]))
      final += 1
+     members = members[limit:]
      await asyncio.sleep(1)
-     members.remove(user)
    except UserPrivacyRestrictedError:
      pass
    except UserNotMutualContactError:
