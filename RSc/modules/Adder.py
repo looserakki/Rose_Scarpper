@@ -22,7 +22,7 @@ async def add(event):
      break
    x = random.choice(clients)
    try:
-     await x(invite(event.chat_id, [user]))
+     await wbot(invite(event.chat_id, [user]))
      final += 1
      members.remove(user)
      await asyncio.sleep(1)
