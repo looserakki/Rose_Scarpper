@@ -15,14 +15,14 @@ async def add(event):
    limit = 50
  if len(members) == 0 or len(members) < int(limit):
    return await event.reply("Not enough members in scrapped list.")
- clients = [ubot, vbot, wbot, xbot, ybot]
+ clients = [vbot, ubot, wbot, xbot, ybot]
  final = 0
  for user in members:
    if final >= int(limit):
      break
-   client = random.choice(clients)
+   x = random.choice(clients)
    try:
-     await client(invite(event.chat_id, [user]))
+     await x(invite(event.chat_id, [user]))
      final += 1
      members.remove(user)
      await asyncio.sleep(1)
