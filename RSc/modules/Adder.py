@@ -20,12 +20,12 @@ async def add(event):
  for user in members:
    if final >= int(limit):
      break
-   x = random.choice(clients)
    try:
-     await wbot(invite(event.chat_id, [user]))
+     x = random.choice(clients)
+     await x(invite(event.chat_id, [user]))
      final += 1
      members.remove(user)
-     await asyncio.sleep(1)
+     await asyncio.sleep(2)
    except UserPrivacyRestrictedError:
      members.remove(user)
      pass
@@ -47,6 +47,12 @@ async def add(event):
      return await event.reply("Enable add members permission.")
    except FloodError as e:
      await asyncio.sleep(e.seconds)
+   except FloodWaitError:
+     x = random.choice(clients)
+     await x(invite(event.chat_id, [user]))
+     final += 1
+     members.remove(user)
+     await asyncio.sleep(2)
    except Exception as e:
      print(e)
  await event.respond(f"Added {final} Members.")
