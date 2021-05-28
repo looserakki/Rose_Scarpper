@@ -42,7 +42,7 @@ async def add(event):
      members.remove(user)
      pass
    except ChatWriteForbiddenError:
-     return await event.reply("One of the clients is mutes unmute them and restart proceedure.")
+     return await event.reply("One of the clients is muted unmute them and restart proceedure.")
    except ChatAdminRequiredError:
      return await event.reply("Enable add members permission.")
    except FloodError as e:
