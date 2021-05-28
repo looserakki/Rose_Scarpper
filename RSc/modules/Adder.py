@@ -42,5 +42,7 @@ async def add(event):
      await asyncio.sleep(e.seconds)
    except Exception as e:
      print(e)
+ except Exception as e:
+   print(e)
  await event.respond(f"Added {final} Members.")
    
