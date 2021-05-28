@@ -17,22 +17,29 @@ async def add(event):
    return await event.reply("Not enough members in scrapped list.")
  clients = [ubot, vbot, wbot, xbot, ybot]
  final = 0
- try:
+ for user in members:
+   if final >= int(limit):
+     break
    client = random.choice(clients)
    try:
-     await client(invite(event.chat_id, members[:limit]))
+     await client(invite(event.chat_id, [user]))
      final += 1
-     members = members[limit:]
+     members.remove(user)
      await asyncio.sleep(1)
    except UserPrivacyRestrictedError:
+     members.remove(user)
      pass
    except UserNotMutualContactError:
+     members.remove(user)
      pass
    except UserKickedError:
+     members.remove(user)
      pass
    except UserBannedInChannelError:
+     members.remove(user)
      pass
    except UserBlockedError:
+     members.remove(user)
      pass
    except ChatWriteForbiddenError:
      return await event.reply("One of the clients is mutes unmute them and restart proceedure.")
