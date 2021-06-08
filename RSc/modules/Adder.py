@@ -56,5 +56,10 @@ async def add(event):
      await asyncio.sleep(2)
    except Exception as e:
      print(e)
+     x = random.choice(clients)
+     await x(invite(event.chat_id, [user]))
+     final += 1
+     members.remove(user)
+     await asyncio.sleep(2)
  await event.respond(f"Added {final} Members.")
    
