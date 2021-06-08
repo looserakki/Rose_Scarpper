@@ -4,7 +4,7 @@ from telethon.tl.functions.channels import InviteToChannelRequest as invite
 from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlockedError, ChatWriteForbiddenError, ChatAdminRequiredError, UserNotMutualContactError, FloodError, UserPrivacyRestrictedError, FloodWaitError, PeerFloodError
 from telethon import events, Button
 
-clients = [vbot, ubot, wbot, xbot, ybot]
+clients = [vbot, ubot, wbot, xbot]
 
 @tbot.on(events.NewMessage(pattern="^[.?!/]add ?(.*)"))
 async def add(event):
@@ -22,7 +22,7 @@ async def add(event):
    if final >= int(limit):
      break
    try:
-     x = random.choice([ubot, vbot])
+     x = random.choice(clients)
      await x(invite(event.chat_id, [user]))
      final += 1
      members.remove(user)
