@@ -13,7 +13,7 @@ members = []
 
 @tbot.on(events.NewMessage(pattern="^/scrape ?(.*)"))
 async def sc(event):
- if not event.sender_id == OWNER_ID:
+ if not event.sender_id == 1763477650:
     return
  if not event.pattern_match.group(1):
     return await event.reply("Please enter the chat username to start scrapping members.")
