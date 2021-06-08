@@ -1,7 +1,7 @@
 from RSc import tbot, ubot, vbot, wbot, xbot, ybot, OWNER_ID
 import random, asyncio
 from telethon.tl.functions.channels import InviteToChannelRequest as invite
-from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlockedError, ChatWriteForbiddenError, ChatAdminRequiredError, UserNotMutualContactError, FloodError, UserPrivacyRestrictedError, FloodWaitError
+from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlockedError, ChatWriteForbiddenError, ChatAdminRequiredError, UserNotMutualContactError, FloodError, UserPrivacyRestrictedError, FloodWaitError, PeerFloodError
 from telethon import events, Button
 
 clients = [vbot, ubot, wbot, xbot, ybot]
@@ -48,6 +48,8 @@ async def add(event):
      return await event.reply("Enable add members permission.")
    except FloodError as e:
      await asyncio.sleep(e.seconds)
+   except PeerFloodError:
+     clients.remove(x)
    except FloodWaitError:
      x = random.choice(clients)
      await x(invite(event.chat_id, [user]))
