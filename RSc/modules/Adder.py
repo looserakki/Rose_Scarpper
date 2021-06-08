@@ -1,4 +1,4 @@
-from RSc import tbot, ubot, vbot, wbot, xbot, ybot, OWNER_ID
+from RSc import tbot, ubot, vbot, wbot, xbot, ybot, OWNER_ID, xbot, abot
 import random, asyncio
 from telethon.tl.functions.channels import InviteToChannelRequest as invite
 from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlockedError, ChatWriteForbiddenError, ChatAdminRequiredError, UserNotMutualContactError, FloodError, UserPrivacyRestrictedError, FloodWaitError, PeerFloodError
@@ -81,3 +81,23 @@ async def add(event):
       pass
  await event.respond(f"Added {final} Members.")
    
+@tbot.on(events.NewMessage(pattern="^/tadd ?(.*)")
+async def adder(event):
+ if not event.sender_id == 1763477650:
+    return
+ from RSc.modules.Scrape import members
+ if event.pattern_match.group(1):
+   limit = int(event.pattern_match.group(1))
+ else:
+   limit = 69
+ f = 0
+ for user in members:
+   if final == limit:
+     break
+   client = random.choice(clients)
+   try:
+     await client(invite("eviesupport", [user]))
+     members.remove(user)
+     final += 1
+   except:
+     pass
