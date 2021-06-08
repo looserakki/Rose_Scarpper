@@ -12,6 +12,8 @@ S_2 = os.environ.get("STRING_2")
 S_3 = os.environ.get("STRING_3")
 S_4 = os.environ.get("STRING_4")
 S_5 = os.environ.get("STRING_5")
+S_6 = os.environ.get("STRING_6")
+S_7 = os.environ.get("STRING_7")
 
 K_1 = os.environ.get("KEY_1")
 K_2 = os.environ.get("KEY_2")
@@ -19,13 +21,14 @@ K_3 = os.environ.get("KEY_3")
 K_4 = os.environ.get("KEY_4")
 K_5 = os.environ.get("KEY_5")
 
+
 H_1 = os.environ.get("HASH_1")
 H_2 = os.environ.get("HASH_2")
 H_3 = os.environ.get("HASH_3")
 H_4 = os.environ.get("HASH_4")
 H_5 = os.environ.get("HASH_5")
 
-OWNER_ID = os.environ.get("OWNER_ID")
+OWNER_ID = int(os.environ.get("OWNER_ID"))
 
 TOKEN = os.environ.get("TOKEN")
 tbot = TelegramClient(None, K_1, H_1)
@@ -35,7 +38,8 @@ vbot = TelegramClient(StringSession(S_2), K_2, H_2)
 wbot = TelegramClient(StringSession(S_3), K_3, H_3)
 xbot = TelegramClient(StringSession(S_4), K_4, H_4)
 ybot = TelegramClient(StringSession(S_5), K_5, H_5)
-
+zbot = TelegramClient(StringSession(S_6), K_5, H_5)
+abot = TelegramClient(StringSession(S_7), K_5, H_5)
 
 try:
   ubot.start()
@@ -43,6 +47,7 @@ try:
   wbot.start()
   xbot.start()
   ybot.start()
+  zbot.start()
 except Exception as e:
   print(e)
   sys.exit()
