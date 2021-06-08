@@ -4,6 +4,8 @@ from telethon.tl.functions.channels import InviteToChannelRequest as invite
 from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlockedError, ChatWriteForbiddenError, ChatAdminRequiredError, UserNotMutualContactError, FloodError, UserPrivacyRestrictedError, FloodWaitError
 from telethon import events, Button
 
+clients = [vbot, ubot, wbot, xbot, ybot]
+
 @tbot.on(events.NewMessage(pattern="^[.?!/]add ?(.*)"))
 async def add(event):
  if not event.sender_id == 1763477650:
@@ -15,7 +17,6 @@ async def add(event):
    limit = 50
  if len(members) == 0 or len(members) < int(limit):
    return await event.reply("Not enough members in scrapped list.")
- clients = [vbot, ubot, wbot, xbot, ybot]
  final = 0
  for user in members:
    if final >= int(limit):
@@ -25,7 +26,7 @@ async def add(event):
      await x(invite(event.chat_id, [user]))
      final += 1
      members.remove(user)
-     await asyncio.sleep(2)
+     await asyncio.sleep(3)
    except UserPrivacyRestrictedError:
      members.remove(user)
      pass
