@@ -49,7 +49,11 @@ async def add(event):
    except FloodError as e:
      await asyncio.sleep(e.seconds)
    except PeerFloodError:
-     clients.remove(x)
+     x = random.choice(clients)
+     await x(invite(event.chat_id, [user]))
+     final += 1
+     members.remove(user)
+     await asyncio.sleep(2)
    except FloodWaitError:
      x = random.choice(clients)
      await x(invite(event.chat_id, [user]))
