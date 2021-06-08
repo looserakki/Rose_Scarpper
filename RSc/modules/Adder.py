@@ -22,7 +22,7 @@ async def add(event):
    if final >= int(limit):
      break
    try:
-     x = ubot
+     x = random.choice([ubot, vbot])
      await x(invite(event.chat_id, [user]))
      final += 1
      members.remove(user)
