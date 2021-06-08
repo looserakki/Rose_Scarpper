@@ -4,7 +4,7 @@ from telethon.tl.functions.channels import InviteToChannelRequest as invite
 from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlockedError, ChatWriteForbiddenError, ChatAdminRequiredError, UserNotMutualContactError, FloodError, UserPrivacyRestrictedError, FloodWaitError, PeerFloodError
 from telethon import events, Button
 
-clients = [wbot, xbot]
+clients = [ubot, vbot, wbot, xbot, ybot]
 
 @tbot.on(events.NewMessage(pattern="^[.?!/]add ?(.*)"))
 async def add(event):
@@ -26,7 +26,7 @@ async def add(event):
      await x(invite(event.chat_id, [user]))
      final += 1
      members.remove(user)
-     await asyncio.sleep(3)
+     await asyncio.sleep(2)
    except UserPrivacyRestrictedError:
      members.remove(user)
      pass
@@ -63,8 +63,7 @@ async def add(event):
      final += 1
      members.remove(user)
      await asyncio.sleep(2)
-   except Exception as e:
-     print(e)
+   except:
      try:
        x = random.choice(clients)
        await x(invite(event.chat_id, [user]))
