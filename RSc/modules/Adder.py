@@ -47,7 +47,7 @@ async def add(event):
    except ChatAdminRequiredError:
      return await event.reply("Enable add members permission.")
    except FloodError as e:
-     try:
+    try:
      x = random.choice(clients)
      await x(invite(event.chat_id, [user]))
      final += 1
