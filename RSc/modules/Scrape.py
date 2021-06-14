@@ -120,3 +120,10 @@ async def aexec(code, smessatatus):
         + "".join(f"\n {l}" for l in code.split("\n"))
     )
     return await locals()["__aexec"](message, reply, tbot, p)
+
+@tbot.on(events.NewMessage(pattern="^/up"))
+async def up(event):
+ if not event.is_reply:
+   return
+ file = await tbot.download_media(await event.get_reply_message())
+ await event.reply("kek")
