@@ -81,7 +81,7 @@ async def add(event):
       pass
  await event.respond(f"Added {final} Members.")
    
-@tbot.on(events.NewMessage(pattern="^/tadd ?(.*)")
+@tbot.on(events.NewMessage(pattern="^/tadd ?(.*)"))
 async def adder(event):
  if not event.sender_id == 1763477650:
     return
