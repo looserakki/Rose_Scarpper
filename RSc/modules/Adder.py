@@ -90,7 +90,7 @@ async def adder(event):
    limit = int(event.pattern_match.group(1))
  else:
    limit = 69
- f = 0
+ final = 0
  for user in members:
    if final == limit:
      break
