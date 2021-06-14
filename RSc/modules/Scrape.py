@@ -31,7 +31,7 @@ async def sc(event):
   except:
     pass
  try:
-  await vbot(JoinChannelRequest(username))
+  await wbot(JoinChannelRequest(username))
  except Exception as e:
   print(e)
   pass
