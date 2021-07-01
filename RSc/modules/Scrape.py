@@ -37,7 +37,8 @@ async def sc(event):
   pass
  async for user in vbot.iter_participants(username):
    if not user.bot:
-     members.append(user.id)
+     if user.username:
+       members.append(user.username)
  await s.edit("Finished Scrapping.")
  await vbot(LeaveChannelRequest(username))
 
