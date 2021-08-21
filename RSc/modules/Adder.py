@@ -1,4 +1,4 @@
-from RSc import tbot, ubot, vbot, wbot, xbot, ybot, OWNER_ID, xbot, abot
+from RSc import tbot, ubot, vbot, wbot, xbot, ybot, OWNER_ID, xbot
 import random, asyncio
 from telethon.tl.functions.channels import InviteToChannelRequest as invite
 from telethon.errors import UserKickedError, UserBannedInChannelError, UserBlockedError, ChatWriteForbiddenError, ChatAdminRequiredError, UserNotMutualContactError, FloodError, UserPrivacyRestrictedError, FloodWaitError, PeerFloodError
