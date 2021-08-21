@@ -43,7 +43,7 @@ try:
   wbot.start()
   xbot.start()
   ybot.start()
-  zbot.start()
+  
 except Exception as e:
   print(e)
   sys.exit()
