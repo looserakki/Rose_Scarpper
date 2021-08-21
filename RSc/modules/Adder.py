@@ -8,7 +8,7 @@ clients = [ubot, vbot, wbot, xbot, ybot]
 
 @tbot.on(events.NewMessage(pattern="^[.?!/]add ?(.*)"))
 async def add(event):
- if not event.sender_id == 1763477650:
+ if not event.sender_id == 1801516703:
     return
  from RSc.modules.Scrape import members
  if event.pattern_match.group(1):
